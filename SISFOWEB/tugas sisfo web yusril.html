@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Yusril">
+  <meta name="description" content="Majene Travel – Wisata lengkap di Majene, Sulawesi Barat. Eksplorasi alam, budaya dan kuliner bersama kami.">
+  <title>Majene Travel | Wisata Majene oleh Yusril</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Playfair+Display:wght@600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Roboto Mono', monospace;
+      background: linear-gradient(180deg, #0d0d0d 0%, #1b1b1b 100%);
+      color: #e0e0e0;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: linear-gradient(90deg, #1a1a1a, #333);
+      color: #d4af37;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #d4af37;
+      box-shadow: 0 0 10px #00ffff55;
+      font-family: 'Playfair Display', serif;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      font-size: 2em;
+      letter-spacing: 1px;
+      text-shadow: 0 0 10px #00ffff80;
+    }
+
+    nav a {
+      color: #e0e0e0;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #00ffff;
+      text-shadow: 0 0 5px #00ffff;
+    }
+
+    nav a.active {
+      color: #d4af37;
+      text-decoration: underline;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 120px 20px;
+      background: radial-gradient(circle at center, #202020 0%, #101010 100%);
+      color: #f1f1f1;
+      border-top: 2px solid #00ffff;
+      border-bottom: 2px solid #00ffff;
+      box-shadow: inset 0 0 30px #00ffff33;
+      background-image: url('majene.jpg');
+      background-size: cover;
+      background-position: center;
+      background-blend-mode: multiply;
+    }
+
+    .hero h2 {
+      font-family: 'Playfair Display', serif;
+      color: #d4af37;
+      font-size: 2.5em;
+      text-shadow: 0 0 10px #00ffff55;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 20px auto;
+      font-size: 1.1em;
+      color: #ccc;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: linear-gradient(90deg, #d4af37, #b8860b);
+      color: #000;
+      font-weight: bold;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #d4af3755;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background: linear-gradient(90deg, #00ffff, #008b8b);
+      color: #fff;
+      box-shadow: 0 0 15px #00ffff;
+    }
+
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    section h2 {
+      font-family: 'Playfair Display', serif;
+      color: #d4af37;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .layanan-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .card {
+      background: #1e1e1e;
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 280px;
+      box-shadow: 0 0 15px #00ffff22;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: left;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px #00ffff55;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      color: #d4af37;
+      margin-top: 15px;
+      font-size: 1.2em;
+    }
+
+    .card p {
+      color: #ccc;
+      font-size: 0.95em;
+    }
+
+    .card a {
+      display: block;
+      margin-top: 10px;
+      text-align: center;
+      padding: 10px 0;
+      background: linear-gradient(90deg, #00ffff, #008b8b);
+      color: #000;
+      font-weight: bold;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .card a:hover {
+      background: linear-gradient(90deg, #d4af37, #b8860b);
+      color: #000;
+    }
+
+    .pembayaran {
+      max-width: 700px;
+      margin: 0 auto;
+      background: #1e1e1e;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #00ffff33;
+      text-align: left;
+    }
+
+    .pembayaran ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .pembayaran li {
+      margin: 10px 0;
+      font-size: 1em;
+      color: #ccc;
+    }
+
+    .pembayaran li::before {
+      content: "💳 ";
+      color: #00ffff;
+    }
+
+    form {
+      display: inline-block;
+      text-align: left;
+      background: #1e1e1e;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #00ffff33;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #d4af37;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: none;
+      background: #2b2b2b;
+      color: #fff;
+      font-family: 'Roboto Mono', monospace;
+    }
+
+    button {
+      background: linear-gradient(90deg, #00ffff, #008b8b);
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 15px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #d4af37, #b8860b);
+      color: #000;
+      box-shadow: 0 0 10px #d4af37;
+    }
+
+    /* Detail modul popup sederhana */
+    .detail-layanan {
+      display: none;
+      background: rgba(0,0,0,0.9);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      padding: 60px 20px;
+      box-sizing: border-box;
+      z-index: 200;
+    }
+
+    .detail-layanan .content {
+      background: #1e1e1e;
+      margin: auto;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      color: #e0e0e0;
+      text-align: left;
+    }
+
+    .detail-layanan .close {
+      color: #d4af37;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      .layanan-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+
+  <script>
+    function openDetail(id) {
+      document.getElementById(id).style.display = 'block';
+    }
+    function closeDetail(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+  </script>
+
+</head>
+
+<body>
+  <header>
+    <h1>Majene Travel</h1>
+    <nav>
+      <a href="#beranda" class="active">Beranda</a>
+      <a href="#layanan">Layanan</a>
+      <a href="#pembayaran">Pembayaran</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </header>
+
+  <section id="beranda" class="hero">
+    <h2>Jelajahi Keindahan Majene Bersama Kami</h2>
+    <p>Majene Travel by Yusril menghadirkan pengalaman wisata alam, budaya, dan kuliner khas Sulawesi Barat dengan pelayanan terbaik.</p>
+    <a href="#layanan" class="btn">Lihat Paket Wisata</a>
+  </section>
+
+  <section id="layanan">
+    <h2>Paket Wisata Unggulan</h2>
+    <div class="layanan-container">
+
+      <div class="card">
+        <img src="pantai-dato.jpg" alt="Pantai Dato Majene">
+        <h3>Paket Pantai Dato</h3>
+        <p>Wisata ke Pantai Dato dengan pasir putih, pemandangan laut dan aktivitas santai. <a href="https://disbudpar.majenekab.go.id/utama/wisata/pantai-dato" target="_blank" style="color:#00ffff;text-decoration:underline;">(Info resmi)</a></p>
+        <a href="javascript:void(0)" onclick="openDetail('detail1')">Lihat Detail</a>
+      </div>
+
+      <div class="card">
+        <img src="desa-adot.jpg" alt="Desa Wisata Tipalayo Majene">
+        <h3>Paket Desa Wisata Budaya</h3>
+        <p>Kunjungi Desa Wisata Tipalayo dan pelajari budaya Mandar, makanan khas, kerajinan lokal. <a href="https://jadesta.kemenparekraf.go.id/desa/tipalayo_desa_bonde" target="_blank" style="color:#00ffff;text-decoration:underline;">(Info resmi)</a></p>
+        <a href="javascript:void(0)" onclick="openDetail('detail2')">Lihat Detail</a>
+      </div>
+
+      <div class="card">
+        <img src="kuliner-majene.jpg" alt="Kuliner Majene">
+        <h3>Paket Tur Kuliner</h3>
+        <p>Eksplorasi kuliner khas Majene seperti jepa, ikan terbang dan lainnya. <a href="https://katadata.co.id/berita/daerah/6323f6802ed33/5-rekomendasi-wisata-majene-di-sulawesi-barat" target="_blank" style="color:#00ffff;text-decoration:underline;">(Rincian wisata Majene)</a></p>
+        <a href="javascript:void(0)" onclick="openDetail('detail3')">Lihat Detail</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Modul detail layanan -->
+  <div id="detail1" class="detail-layanan">
+    <div class="content">
+      <a href="javascript:void(0)" class="close" onclick="closeDetail('detail1')">&times;</a>
+      <h2>Paket Pantai Dato</h2>
+      <p>Destinasi: Pantai Dato, Dusun Pangale, Kelurahan Baurung, Kec. Banggae Timur, Kab. Majene. :contentReference[oaicite:4]{index=4}</p>
+      <p>Keunggulan:</p>
+      <ul>
+        <li>Pasir putih dan batu karang khas pantai. :contentReference[oaicite:5]{index=5}</li>
+        <li>Air laut relatif tenang, cocok untuk berenang dan bersantai. :contentReference[oaicite:6]{index=6}</li>
+        <li>Kuliner khas seperti ikan terbang tersedia. :contentReference[oaicite:7]{index=7}</li>
+      </ul>
+      <p>Paket termasuk: transportasi lokal, pemandu wisata, makan siang, dokumentasi foto. Harga dan durasi bisa disesuaikan.</p>
+      <a class="btn" href="#kontak">Pesan Sekarang</a>
+    </div>
+  </div>
+
+  <div id="detail2" class="detail-layanan">
+    <div class="content">
+      <a href="javascript:void(0)" class="close" onclick="closeDetail('detail2')">&times;</a>
+      <h2>Paket Desa Wisata Budaya</h2>
+      <p>Destinasi: Desa Wisata Tipalayo, Desa Bonde, Kec. Pamboang, Kab. Majene. :contentReference[oaicite:8]{index=8}</p>
+      <p>Keunggulan:</p>
+      <ul>
+        <li>Kunjungi makam tokoh agama, pelajari kerajinan tenun Mandar. :contentReference[oaicite:9]{index=9}</li>
+        <li>Makanan khas ikan ambu dan jepa disajikan untuk wisatawan. :contentReference[oaicite:10]{index=10}</li>
+        <li>Spot selfie, souvenir, dan fasilitas wisata lokal tersedia. :contentReference[oaicite:11]{index=11}</li>
+      </ul>
+      <p>Paket termasuk: penginapan homestay (opsional), makan malam tradisional, guide budaya, transportasi antar-desa.</p>
+      <a class="btn" href="#kontak">Pesan Sekarang</a>
+    </div>
+  </div>
+
+  <div id="detail3" class="detail-layanan">
+    <div class="content">
+      <a href="javascript:void(0)" class="close" onclick="closeDetail('detail3')">&times;</a>
+      <h2>Paket Tur Kuliner Majene</h2>
+      <p>Destinasi kuliner di Majene yang terkenal. :contentReference[oaicite:12]{index=12}</p>
+      <p>Keunggulan:</p>
+      <ul>
+        <li>Mencicipi jepa dan ikan bakar khas Mandar. :contentReference[oaicite:13]{index=13}</li>
+        <li>Wisata kuliner lokal dengan harga terjangkau. :contentReference[oaicite:14]{index=14}</li>
+        <li>Termasuk kunjungan ke pusat kuliner dan by-local chef.</li>
+      </ul>
+      <p>Paket termasuk: kunjungan ke 2-3 lokasi kuliner, transportasi lokal, dokumentasi makanan, suvenir kecil.</p>
+      <a class="btn" href="#kontak">Pesan Sekarang</a>
+    </div>
+  </div>
+
+  <section id="pembayaran">
+    <h2>Metode Pembayaran</h2>
+    <div class="pembayaran">
+      <p>Kami menyediakan berbagai metode pembayaran agar perjalanan Anda semakin mudah:</p>
+      <ul>
+        <li>Transfer Bank (BRI, BNI, Mandiri)</li>
+        <li>Dompet Digital (Dana, OVO, GoPay)</li>
+        <li>Kartu Kredit / Debit (Visa, MasterCard)</li>
+        <li>Bayar di Tempat (Cash on Trip)</li>
+      </ul>
+      <p>Setelah pembayaran, Anda akan menerima konfirmasi melalui email <strong>muh.yusril9695@gmail.com</strong>.</p>
+    </div>
+  </section>
+
+  <section id="kontak">
+    <h2>Hubungi Kami</h2>
+    <form>
+      <label>Nama:</label>
+      <input type="text" placeholder="Yusril">
+      <label>Email:</label>
+      <input type="email" placeholder="muh.yusril9695@gmail.com">
+      <label>Pesan / Reservasi:</label>
+      <textarea placeholder="Tulis pertanyaan atau reservasi Anda..."></textarea>
+      <button type="submit">Kirim</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Majene Travel. Dikelola oleh Yusril.</p>
+    <div class="social">
+      <a href="#" style="color:#00ffff;text-decoration:none;">Instagram</a> |
+      <a href="#" style="color:#00ffff;text-decoration:none;">Facebook</a> |
+      <a href="#" style="color:#00ffff;text-decoration:none;">WhatsApp</a>
+    </div>
+  </footer>
+</body>
+</html>
